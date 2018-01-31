@@ -53,12 +53,35 @@ describe Cuboid do
     end
   end
 
-  describe "intersects?" do
+  describe "#intersects?" do
     it "checks if two cubes overlap/intersect each other" do
       expect(cube.intersects?(cube2)).to be false
       expect(cube.intersects?(cube3)).to be true
     end
+  end
 
+  describe "#rotate_x_axis" do
+    it "switches the cuboid's length and height values" do
+      expect(cube.vertices[:ftr]).to eq([1,2,3])
+      cube.rotate_x_axis
+      expect(cube.vertices[:ftr]).to eq([1,3,2])
+    end
+  end
+
+  describe "#rotate_y_axis" do
+    it "switches the cuboid's length and width values" do
+      expect(cube.vertices[:ftr]).to eq([1,2,3])
+      cube.rotate_y_axis
+      expect(cube.vertices[:ftr]).to eq([3,2,1])
+    end
+  end
+
+  describe "#rotate_z_axis" do
+    it "switches the cuboid's width and height values" do
+      expect(cube.vertices[:ftr]).to eq([1,2,3])
+      cube.rotate_z_axis
+      expect(cube.vertices[:ftr]).to eq([2,1,3])
+    end
   end
 
 end

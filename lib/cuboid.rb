@@ -47,6 +47,18 @@ class Cuboid
     (x_axis_end > x_axis_start) && (y_axis_end > y_axis_start) && (y_axis_end > y_axis_start)
   end
 
+  def rotate_x_axis #rotate around the width
+    @leng, @height = @height, @leng
+  end
+
+  def rotate_y_axis #rotate around the height
+    @leng, @width = @width, @leng
+  end
+
+  def rotate_z_axis #rotate around the length
+    @width, @height = @height, @width
+  end
+
 
   #END public methods that should be your starting point
 end
