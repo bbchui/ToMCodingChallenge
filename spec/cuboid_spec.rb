@@ -58,6 +58,12 @@ describe Cuboid do
       expect(cube.intersects?(cube2)).to be false
       expect(cube.intersects?(cube3)).to be true
     end
+
+    it "can detect intersection after the cube has been moved" do
+      expect(cube.intersects?(cube2)).to be false
+      cube2.move_to!(0,1,2)
+      expect(cube.intersects?(cube2)).to be true
+    end
   end
 
   describe "#rotate_x_axis" do

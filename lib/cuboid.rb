@@ -30,7 +30,7 @@ class Cuboid
     }
   end
 
-  #returns true if the two cuboids intersect each other.  False otherwise.
+  #Returns true if the two cuboids intersect each other.  False otherwise.
   def intersects?(other)
     x_axis_start = [self.vertices[:bbl][0], other.vertices[:bbl][0]].max
     x_axis_end = [self.vertices[:bbr][0], other.vertices[:bbr][0]].min
@@ -59,9 +59,5 @@ class Cuboid
     @width, @height = @height, @width
   end
 
-
   #END public methods that should be your starting point
 end
-
-# cube = Cuboid.new([0,0,0],1,1,1)
-# cube2 = Cuboid.new([3,4,5],1,1,1)
